@@ -1,0 +1,27 @@
+{
+  "name": "jeff-at-aha.github-deployed-label",
+  "description": "Auto-tag features on deploy",
+  "version": "0.0.0",
+  "author": "jeff-at-aha",
+  "repository": {
+    "type": "git",
+    "url": "TODO: Add the GitHub URL to your extension in package.json"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.8.0"
+  },
+  "ahaExtension": {
+    "contributes": {
+      "events": {
+        "autoTagFeaturesOnDeploy": {
+          "title": "Auto-tag features on deploy",
+          "entryPoint": "src/events/autoTagFeaturesOnDeploy.js",
+          "handles": [
+            "aha-develop.github.pr.labeled"
+          ]
+        }
+      }
+    }
+  }
+}
