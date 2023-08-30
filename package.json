@@ -1,6 +1,6 @@
 {
   "name": "jeff-at-aha.github-deployed-label",
-  "description": "Auto-tag features on deploy",
+  "description": "GitHub: Deployments",
   "version": "0.0.0",
   "author": "jeff-at-aha",
   "repository": {
@@ -15,11 +15,16 @@
     "contributes": {
       "events": {
         "autoTagFeaturesOnDeploy": {
-          "title": "Auto-tag features on deploy",
-          "entryPoint": "src/events/autoTagFeaturesOnDeploy.js",
+          "title": "Trigger status automation",
+          "entryPoint": "src/events/triggerStatusAutomation.js",
           "handles": [
             "aha-develop.github.pr.labeled"
           ]
+        }
+      },
+      "automationTriggers": {
+        "prDeployed": {
+          "title": "PR deployed"
         }
       }
     }
