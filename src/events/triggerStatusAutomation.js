@@ -23,10 +23,11 @@ function applyTag(record) {
 }
 
 aha.on({ event: 'aha-develop.github.pr.labeled' }, ({ record, payload }) => {
-  if (payload.label.name = 'Deployed') {
+  if (payload.label.name == 'Deployed') {
     console.log(`PR has a 'Deployed' label. Updating associated record: ${record.typename}-${record.id}.`)
 
-    applyTag(record)
+    // Updating tags is destructive, not additive
+    // applyTag(record)
     aha.triggerAutomationOn(record, `${IDENTIFIER}.prDeployed`, true)
   }
 });
